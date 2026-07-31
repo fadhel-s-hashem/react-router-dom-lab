@@ -3,7 +3,7 @@ import { useState } from "react"
 const MailboxForm = (props) => {
 
 const initialState = {
-  _id: 1,
+  _id: '',
   boxSize: '',
   boxOwner: '',
 }
@@ -29,6 +29,7 @@ const handelChange = (event)=> {
     return(
         <div>
             <h1>New Mailbox</h1>
+
             <form onSubmit={handelSubmit}>
                 Enter a Boxholder:
                 <input type="text" name="boxOwner" value={formData.boxOwner} onChange={handelChange}/>
