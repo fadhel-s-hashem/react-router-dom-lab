@@ -11,7 +11,7 @@ const App = () => {
     <>
     <h1>Hello world!</h1>
     <NavBar/>
-    <MailboxForm/>
+    <MailboxForm mailbox={mailbox} setMailbox={setMailbox}/>
 
     </>
   )

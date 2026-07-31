@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const MailboxForm = () => {
+const MailboxForm = (props) => {
 
 const initialState = {
   _id: 1,
@@ -20,13 +20,16 @@ const handelChange = (event)=> {
  const handelSubmit = (event) => {
         event.preventDefault()
 
+        props.setMailbox([...props.mailbox, formData])
+        setFormData(initialState)
+
  }
 
 
     return(
         <div>
             <h1>New Mailbox</h1>
-            <form>
+            <form onSubmit={handelSubmit}>
                 Enter a Boxholder:
                 <input type="text" name="boxOwner" value={formData.boxOwner} onChange={handelChange}/>
 
