@@ -3,7 +3,7 @@ import { useState } from "react"
 const MailboxForm = (props) => {
 
 const initialState = {
-  _id: '',
+  _id: '', // it can be done even if i dont delete it ?
   boxSize: '',
   boxOwner: '',
 }
@@ -20,7 +20,7 @@ const handelChange = (event)=> {
  const handelSubmit = (event) => {
         event.preventDefault()
 
-        props.setMailbox([...props.mailbox, formData])
+        props.addBox(formData)
         setFormData(initialState)
 
  }

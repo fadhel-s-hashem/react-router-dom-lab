@@ -8,11 +8,18 @@ const App = () => {
 
   const [mailbox, setMailbox]= useState([])
 
+  const addBox = (formData) => {
+    const nextId = {
+      ...formData, _id: mailbox.length +1
+    }
+    setMailbox([...mailbox, nextId])
+  }
+
   return (
     <>
     <h1>Hello world!</h1>
     <NavBar/>
-    <MailboxForm mailbox={mailbox} setMailbox={setMailbox}/>
+    <MailboxForm addBox={addBox}/>
     <MailboxList mailbox={mailbox}/>
 
     </>
