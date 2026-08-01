@@ -1,8 +1,10 @@
 // src/App.jsx
 import { useState } from "react";
+import { Route, Routes } from 'react-router'
 import NavBar from "./components/NavBar";
 import MailboxForm from "./components/MailboxForm";
 import MailboxList from "./components/MailboxList";
+import MailboxDetails from "./components/MailboxDetails";
 
 const App = () => {
 
@@ -17,10 +19,18 @@ const App = () => {
 
   return (
     <>
-    <h1>Hello world!</h1>
+    
     <NavBar/>
-    <MailboxForm addBox={addBox}/>
-    <MailboxList mailbox={mailbox}/>
+    <Routes>
+      <Route path="/" element={<main><h1>Post Office</h1></main>}/>
+      <Route path="/mailboxes" element={<MailboxList mailbox={mailbox}/>}/>
+      <Route path="/new-mailbox" element={ <MailboxForm addBox={addBox}/>}/>
+      <Route path="/mailboxes/:mailboxId" element={<MailboxDetails mailbox = {mailbox}/>}/>
+      </Routes >
+
+      
+   
+    
 
     </>
   )

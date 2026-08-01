@@ -35,7 +35,8 @@ const handelChange = (event)=> {
                 <input type="text" name="boxOwner" value={formData.boxOwner} onChange={handelChange}/>
 
                 Select a box size
-                <select name="boxSize" value={formData.boxSize} onChange={handelChange}>
+                <select name="boxSize" value={formData.boxSize} onChange={handelChange} >
+            
             <option>Small</option>
             <option>Medium</option>
             <option>Large</option>
